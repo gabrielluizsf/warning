@@ -1,6 +1,6 @@
 # warning - The Error Library :bug:
 
-- Default Validation
+## Default Validation
 
 ```go
  out, err := exec.Command("disfhdisfias").Output();
@@ -17,7 +17,7 @@ benchmark:
 
 <img src="https://github.com/theGOURL/warning/blob/main/images/BASIC_ERROR.png?raw=true" />
 
-- Using PRINT_DEFAULT_ERRORS function
+## Using PRINT_DEFAULT_ERRORS function
 
 ```go
  out, err := exec.Command("disfhdisfias").Output();
