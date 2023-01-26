@@ -1,5 +1,6 @@
 # warning - The Error Library :bug:
 
+
 ## Default Validation
 
 ```go
