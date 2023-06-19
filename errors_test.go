@@ -10,12 +10,13 @@ import (
 
 func TestPRINT_DEFAULT_ERRORS(test *testing.T) {
 	SO_USER, _ :=  user.Current()
+	SO_USERNAME := SO_USER.Username
 	out, err := exec.Command("whoami").Output()
 	PRINT_DEFAULT_ERRORS(err, "INVALID COMMAND")
 	output := strings.TrimSpace(string(out))
 
-	if !strings.Contains(output, SO_USER.Username) {
-		test.Errorf("Nome de usuário incorreto. Esperado: %s, Obtido: %s", SO_USER, output)
+	if !strings.Contains(output, SO_USERNAME) {
+		test.Errorf("Nome de usuário incorreto. Esperado: %s, Obtido: %s", SO_USERNAME, output)
 	}
 }
 
