@@ -11,7 +11,7 @@ func ExamplePRINT_DEFAULT_ERRORS(){
 	output := string(out[:])
 	fmt.Println(output)
   //Output: 
-  //[Command successfully executed]
+  //Command successfully executed 🐛
  //gabriel
 }
 
@@ -29,7 +29,7 @@ func BenchmarkPRINT_DEFAULT_ERRORS_BASIC(benchmark *testing.B){
     if err != nil{
       fmt.Println("INVALID COMMAND");
     }else{
-      fmt.Println("Command successfully executed");
+      fmt.Println("Command successfully executed 🐛");
     }
 	output := string(out[:]);
 	fmt.Println(output);
