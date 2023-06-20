@@ -7,17 +7,21 @@ import (
 	"strings"
 	"testing"
 )
-
+var (
+	SO_USER, _ =  user.Current()
+	SO_USERNAME = SO_USER.Username
+)
 func TestPRINT_DEFAULT_ERRORS(test *testing.T) {
-	SO_USER, _ :=  user.Current()
-	SO_USERNAME := SO_USER.Username
-	out, err := exec.Command("whoami").Output()
-	PRINT_DEFAULT_ERRORS(err, "INVALID COMMAND")
-	output := strings.TrimSpace(string(out))
-
-	if !strings.Contains(output, SO_USERNAME) {
-		test.Errorf("Nome de usuário incorreto. Esperado: %s, Obtido: %s", SO_USERNAME, output)
-	}
+	
+		out, err := exec.Command("whoami").Output()
+		PRINT_DEFAULT_ERRORS(err, "INVALID COMMAND")
+		OUTPUT := strings.TrimSpace(string(out))
+		output := strings.ToLower(OUTPUT)
+		so_username   := strings.ToLower(SO_USERNAME)
+		if !strings.Contains(output, so_username) {
+			test.Errorf("Nome de usuário incorreto. Esperado: %s, Obtido: %s", SO_USERNAME, output)
+		}
+	
 }
 
 func BenchmarkPRINT_DEFAULT_ERRORS(benchmark *testing.B){
