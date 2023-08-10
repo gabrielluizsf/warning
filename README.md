@@ -1,4 +1,4 @@
-# warning - The Error Library :bug:
+# warning - The error handling library :bug:
 
 
 ## Default Validation
